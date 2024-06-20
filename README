@@ -1,0 +1,24 @@
+README: PDFdecoder, June 2024. 
+
+The PDFdecoder project is a set of Python analysis modules which produce
+the main results of arXiv: 2312.02278; the code is developed by the authors
+of that study, Brandon Kriesten and T.J. Hobbs. Questions should be referred
+to bkriesten@anl.gov and/or tim@anl.gov.
+
+The currently released package includes ingredients for the two model
+architectures discussed most extensively in the paper --- the autoencoder
+with constrained latent (AE-CL) and variational autoencoder inverse
+mapper (VAIM), each of which resides in a dedicated subdirectory, ae_cl/
+and vaim/, respectively. Inside each directory is a jupyter-notebook,
+`..._demo.ipynb' which illustrates basic aspects of the analysis. Given
+the large file sizes, we do not include training data (in input_data/),
+but users can generate this information themselves; it is also available
+on request. The ae_cl/ and vaim/ subdirectories also contain Python
+scripts defining the model architectures, activation functions, and related
+[hyper]parameters (e.g., ae_cl.py), performing training (train.py),
+and constructing a statistical ensemble (ensemble.py).
+
+Additionally, utils/pdf_gen.py is a script for randomly sampling and
+generating training distributions based on integrable analytic forms,
+and can be modified directly as needed.
+
